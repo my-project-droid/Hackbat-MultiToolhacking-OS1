@@ -1,0 +1,24 @@
+# --- Arduino IDE Temporary Files ---
+*.tmp
+*.bak
+*.elf
+*.bin
+*.hex
+*.uf2
+*.map
+build/
+Build/
+bin/
+
+# --- Local IDE Settings ---
+.vscode/
+.idea/
+.settings/
+.project
+*.swp
+*~
+
+# --- Operating System Junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
