@@ -23,6 +23,12 @@ An open-source multi-tool firmware for the RP2040 Hackbat. Unifies sub-1GHz RF (
 | **NFC Interface** | NXP PN532 | GPIO 5 (IRQ) / 6 (RST) |
 | **Radio Interface**| TI CC1101 | GPIO 7 (GDO0) |
 | **Wi-Fi Serial** | ESP-12F | GPIO 8 (RX) / 9 (TX) |
+<img width="740" height="416" alt="image" src="https://github.com/user-attachments/assets/0658df6c-9dde-4e41-804c-0dec78d1a5bb" />
+
+
+
+
+
 
 ## 🔧 Installation & Flashing
 1. Add the **Earle Philhower RP2040 Core** to your Arduino IDE boards manager.
