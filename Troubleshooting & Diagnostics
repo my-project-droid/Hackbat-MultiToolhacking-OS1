@@ -1,0 +1,20 @@
+# Troubleshooting & System Diagnostics
+
+Hardware fragmentation and assembly errors can occasionally break communication pathways. Use this field guide to diagnose structural hardware or software compilation faults.
+
+## 🛑 1. Compile Error: 'Class Adafruit_SH1106G' has no member named...
+*   **The Issue:** Your compiler fails because it cannot trace the specific screen configurations.
+*   **The Fix:** Ensure you installed `Adafruit SH110X` rather than the older, legacy `Adafruit_SSD1306` library. Verify that `#include "config.h"` is present at the absolute top of your main runtime file.
+
+## 📱 2. The OLED Screen Stays Completely Black
+If you flash the board successfully but the display layout refuses to initialize:
+*   **I2C Addressing:** Most small SH1106 panels run on address `0x3C`, but third-party modules occasionally route through `0x3D`. Open `config.h` and swap the address definition to check compatibility.
+*   **Solder Bridging:** Use a magnifying glass or microscope to verify there are no accidental microscopic solder blobs linking the SDA and SCL trace pins.
+
+## 📻 3. CC1101 Radio Module Initialization Fails
+*   **Symptoms:** The device boots into the menu framework, but selecting the radio tools causes the interface to freeze or display setup errors.
+*   **The Fix:** The CC1101 is highly sensitive to long SPI traces. Verify that the `CC1101_GDO0` pin (`GPIO 7`) is securely attached to the microchip without loose cold-solder joints.
+
+## ⚡ 4. Computer Doesn't Recognize BadUSB Target
+*   **Symptoms:** Plugging the device into a target laptop powers up the screen, but keystrokes never inject.
+*   **The Fix:** Ensure you are using a micro-USB **data cable** rather than a cheap power-only charging cord. Power cords lack the internal D+ and D- copper lines needed to translate keyboard keystroke matrices to host operating systems.
